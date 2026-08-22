@@ -22,6 +22,13 @@ Before you begin, ensure you have:
 > ```
 
 ---
+## 📺 Watch the Tutorial
+
+Click the image below to watch the full Docker tutorial on YouTube!
+
+[![Docker with Stan Tutorial](https://img.youtube.com/vi/MILDr6lqhcI/maxresdefault.jpg)](https://youtu.be/MILDr6lqhcI)
+
+---
 
 ## 🚀 Step-by-Step Installation
 
