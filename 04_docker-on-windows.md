@@ -1,8 +1,3 @@
----
-
-### `Installation_Windows.md`
-
-```markdown
 # 🪟 Docker Installation on Windows
 
 ![Windows](https://img.shields.io/badge/OS-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
