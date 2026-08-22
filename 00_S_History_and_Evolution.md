@@ -8,6 +8,13 @@ Docker did not invent container technology. Linux features like `chroot`, namesp
 Here is the evolutionary journey of how Docker's architecture matured from a simple wrapper to a modular, standardized platform.
 
 ---
+## 📺 Watch the Video
+
+Click the image below to watch the full video on the History and Evolution of Docker!
+
+[![History and Evolution of Docker](https://img.youtube.com/vi/fd_2vIucrMo/maxresdefault.jpg)](https://youtu.be/fd_2vIucrMo)
+
+---
 
 ## 🗺️ The Evolutionary Timeline
 
