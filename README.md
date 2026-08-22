@@ -43,6 +43,7 @@ docker build -t docker-with-stan:v1 .
 docker run -d -p 8080:80 --name my-stan-app docker-with-stan:v1
 
 **🛠️ Essential Docker Commands**
+
 **Command                                        Description**
 docker images                       List all local Docker imagesdocker psList running containers
 docker ps -a                        List all containers (running & stopped)
