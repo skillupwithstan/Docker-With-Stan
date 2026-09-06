@@ -29,14 +29,23 @@ When deployed, Express Mode automatically provisions the following resources usi
 
 Automatically Configured Resources
 When using Express Mode, the following AWS resources are automatically created:
+
 ECS Cluster: The default cluster is used if not specified
+
 Fargate Task Definition: Serverless container execution environment
+
 ECS Service: Task lifecycle management
+
 Application Load Balancer: Traffic load balancing
+
 Route 53 Record: AWS-provided domain name
+
 ACM Certificate: SSL/TLS certificate for HTTPS support
+
 Security Groups: Configured based on the principle of least privilege
+
 Auto Scaling Policy: CPU utilization-based by default
+
 How It Works
 Let's explore in detail how Express Mode automatically orchestrates infrastructure and deploys applications.
 Architecture Overview
@@ -44,26 +53,35 @@ Express Mode uses AWS Fargate as the compute engine, providing a serverless cont
 
 <img width="1000" height="672" alt="image" src="https://github.com/user-attachments/assets/733cfa13-5b78-4006-b6b3-a75f0317edf7" />
 
-Key Components
-Fargate Tasks
+**Key Components**
+___________________
+
+**Fargate Tasks**
 AWS Fargate is used as the container execution environment.
 Server management is not required, and CPU/memory can be configured individually.
-Application Load Balancer
+
+**Application Load Balancer**
 Responsible for traffic load balancing, distinguishing multiple services through host-header based listener rules.
 As a key feature of Express Mode, up to 25 services can be consolidated behind a single ALB. Each service is assigned a unique domain name, and the ALB routes traffic using host-headers.
 This mechanism enables cost reduction for ALBs while maintaining service isolation.
-Route 53
+
+**Route 53**
 Automatically generates AWS-provided domain names.
 Each service is assigned a unique URL, and an A record targeting the ALB is automatically created.
-AWS Certificate Manager (ACM)
+
+**AWS Certificate Manager (ACM)**
 Responsible for automatic issuance and management of SSL/TLS certificates.
 Certificate renewal is also automated, requiring no manual management.
-Auto Scaling
+
+**Auto Scaling**
 By default, CPU utilization-based Auto Scaling policies are configured.
 Task counts are automatically adjusted based on traffic patterns, scaling within the range from minimum to maximum task counts.
-Security Groups
+
+**Security Groups**
+
 Security groups are automatically created based on the principle of least privilege, with only necessary ports opened.
-Deployment Flow
+
+**Deployment Flow**
 Deployment with Express Mode is automatically executed following this flow:
 
 <img width="1000" height="396" alt="image" src="https://github.com/user-attachments/assets/e8342881-62f5-4b83-9e50-03d689b5278c" />
