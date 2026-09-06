@@ -38,11 +38,11 @@ $ sudo yum install -y git
 $ git clone https://github.com/skillupwithstan/Docker-With-Stan/amazon-ecs-demo-with-node-express
 # build docker image
 $ cd amazon-ecs-demo-with-node-express/sample-nodejs-app
-$ docker build -t sample-nodejs-app .
+$ docker build -t stan-nodejs-app .
 # verify and get the image id
 $ docker images
 # run docker image
-$ docker run --name dockerized-node-app -p 80:3000 --init --rm sample-nodejs-app
+$ docker run --name dockerized-node-app -p 80:3000 --init --rm stan-nodejs-app
 
 ```
 
@@ -69,15 +69,15 @@ $ aws ecr get-login-password --region <region> | docker login --username AWS --p
 # Once you receive 'Login Succeeded" , you can create your private repo on ECR
 # update the region on the below command
 $ aws ecr create-repository \
-    --repository-name sample-nodejs-app \
+    --repository-name stan-nodejs-app \
     --image-scanning-configuration scanOnPush=true \
     --region <region>
 
 # tag and push your image
 # update the region and aws_account_id on the below command
-$ docker tag sample-nodejs-app:latest <aws_account_id>.dkr.ecr.<region>.amazonaws.com/sample-nodejs-app:latest
+$ docker tag sample-nodejs-app:latest <aws_account_id>.dkr.ecr.<region>.amazonaws.com/stan-nodejs-app:latest
 
-$ docker push <aws_account_id>.dkr.ecr.<region>.amazonaws.com/sample-nodejs-app:latest
+$ docker push <aws_account_id>.dkr.ecr.<region>.amazonaws.com/stan-nodejs-app:latest
 
 ```
 
@@ -96,7 +96,7 @@ Congratulations! Now, you've pushed this image to a private repository of Amazon
 - **Launch type:** ec2
 - **Task Definition Name:** sample-nodejs-app
 - **Click "Add Container"** under Container Definitions
-  - **Container name:** sample-nodejs-app
+  - **Container name:** stan-nodejs-app
   - **Image:**'aws_account_id'.dkr.ecr.'region'.amazonaws.com/sample-nodejs-app:latest
   - **Soft limit:** 256
   - **Port Mapping:** 80(host):3000(container)
@@ -112,7 +112,7 @@ You should now be able to see your task definition on the console.
 
 - **Cluster Template:** EC2 Linux + Networking
 
-- **Cluster Name :** sample-nodejs-app-cluster
+- **Cluster Name :** stan-nodejs-app-cluster
 
 - **EC2 instance type:** t3.micro
 
@@ -133,7 +133,7 @@ You should now be able to see your cluster details on the dashboard.
 <p>
 
 - **Launch type: EC2
-- Service name: sample-nodejs-app-service
+- Service name: stan-nodejs-app-service
 - Number of tasks: 1
 
 - You might leave other settings as default, proceed through the next steps and click `Create Service`
