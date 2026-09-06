@@ -148,4 +148,3 @@ Note: Don't forget to clean your resources to prevent any unexpected charge.
 
 ## Security
 
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
