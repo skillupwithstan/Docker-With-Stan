@@ -35,7 +35,7 @@ $ docker info
 ```bash
 # install git
 $ sudo yum install -y git
-$ git clone https://github.com/aws-samples/amazon-ecs-demo-with-node-express
+$ git clone https://github.com/skillupwithstan/Docker-With-Stan/amazon-ecs-demo-with-node-express
 # build docker image
 $ cd amazon-ecs-demo-with-node-express/sample-nodejs-app
 $ docker build -t sample-nodejs-app .
